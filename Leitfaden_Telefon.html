@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0a2540">
+<title>Telefon-Leitfaden — A. Abazi · Combinvest AG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a2540;
+  --navy-deep: #061a30;
+  --navy-soft: #1a3a5c;
+  --blue: #1e6fd9;
+  --blue-light: #3b8eef;
+  --blue-pale: #eaf2fc;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --ink: #0a2540;
+  --ink-soft: #4a5b73;
+  --ink-mute: #8094ad;
+  --line: #e3eaf2;
+  --line-soft: #f0f4f8;
+  --gold: #c9a961;
+  --red: #e63946;
+  --yellow: #f5b800;
+  --green: #2a9d8f;
+  --info: #1e6fd9;
+  --shadow-sm: 0 1px 2px rgba(10,37,64,0.06), 0 1px 3px rgba(10,37,64,0.04);
+  --shadow-md: 0 4px 12px rgba(10,37,64,0.08), 0 2px 4px rgba(10,37,64,0.04);
+  --shadow-lg: 0 12px 32px rgba(10,37,64,0.12), 0 4px 8px rgba(10,37,64,0.06);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ====== HEADER ====== */
+.hero {
+  background:
+    radial-gradient(ellipse at top right, rgba(30,111,217,0.18), transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(201,169,97,0.08), transparent 50%),
+    linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-soft) 100%);
+  color: white;
+  padding: 28px 24px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(30,111,217,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: white;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 14px;
+  font-family: 'Fraunces', serif;
+}
+
+.brand-name {
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--blue-light);
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2vw, 17px);
+  opacity: 0.78;
+  max-width: 560px;
+  margin-bottom: 24px;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ====== STICKY NAV ====== */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(246,248,251,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  padding: 10px 0;
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav a {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 100px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  background: var(--blue-pale);
+  color: var(--navy);
+}
+
+/* ====== MAIN ====== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+section {
+  margin-bottom: 48px;
+  scroll-margin-top: 70px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  background: var(--blue-pale);
+  border-radius: 100px;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.section-title em { font-style: italic; color: var(--blue); font-weight: 400; }
+
+.section-intro {
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+
+/* ====== CARDS ====== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover { box-shadow: var(--shadow-md); }
+
+.card-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-subtitle {
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+  flex-shrink: 0;
+}
+
+/* ====== DIALOGUE / SCRIPT ====== */
+.script {
+  background: linear-gradient(135deg, var(--blue-pale), #f4f8fd);
+  border-left: 3px solid var(--blue);
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  margin: 12px 0;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--navy);
+  position: relative;
+}
+
+.script::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 48px;
+  font-family: 'Fraunces', serif;
+  color: var(--blue);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.script p { margin-bottom: 8px; }
+.script p:last-child { margin-bottom: 0; }
+
+.script .speaker {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.script .speaker.kunde {
+  color: var(--ink-mute);
+}
+
+.script-block + .script-block { margin-top: 10px; }
+
+.note {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 8px 0 4px;
+  padding-left: 12px;
+  border-left: 2px solid var(--line);
+}
+
+/* ====== STORY BOX ====== */
+.story {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: white;
+  padding: 28px;
+  border-radius: var(--radius);
+  margin: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.story::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(30,111,217,0.2), transparent 70%);
+}
+
+.story-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  font-weight: 700;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.story-text {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.story-text p { margin-bottom: 12px; }
+.story-text p:last-child { margin-bottom: 0; }
+
+.story-text strong { color: var(--blue-light); font-weight: 600; }
+
+/* ====== TABS (COLOR TYPES) ====== */
+.tabs-wrap {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 8px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  margin-bottom: 20px;
+  position: sticky;
+  top: 56px;
+  z-index: 50;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.tab {
+  padding: 10px 6px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-soft);
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tab-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tab[data-color="red"] .tab-dot { background: #e63946; }
+.tab[data-color="yellow"] .tab-dot { background: #f5b800; }
+.tab[data-color="green"] .tab-dot { background: #2a9d8f; }
+.tab[data-color="blue"] .tab-dot { background: #1e6fd9; }
+
+.tab.active {
+  color: var(--navy);
+  background: var(--blue-pale);
+}
+
+.tab.active[data-color="red"] { background: #fde8ea; color: #9a1f29; }
+.tab.active[data-color="yellow"] { background: #fff4d1; color: #8a6500; }
+.tab.active[data-color="green"] { background: #d8f0ec; color: #1a5e56; }
+.tab.active[data-color="blue"] { background: #d6e5f8; color: #0d3d7c; }
+
+.tab span:last-child {
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
+.tab-content { display: none; animation: fadeIn 0.3s; }
+.tab-content.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== COLOR-SPECIFIC ACCENTS ====== */
+.color-info {
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.color-info.red { background: #fde8ea; border-left: 4px solid #e63946; }
+.color-info.yellow { background: #fff4d1; border-left: 4px solid #f5b800; }
+.color-info.green { background: #d8f0ec; border-left: 4px solid #2a9d8f; }
+.color-info.blue { background: #d6e5f8; border-left: 4px solid #1e6fd9; }
+
+.color-info h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  margin-bottom: 4px;
+  color: var(--navy);
+}
+
+.color-info .recognize {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.color-info .recognize strong { color: var(--navy); }
+
+.do-dont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .do-dont { grid-template-columns: 1fr; }
+}
+
+.do-dont > div {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.do { background: rgba(42,157,143,0.12); }
+.dont { background: rgba(230,57,70,0.1); }
+
+.do strong, .dont strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.do strong { color: #1a5e56; }
+.dont strong { color: #9a1f29; }
+
+/* ====== SHOCK NUMBERS ====== */
+.shock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.shock {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.shock::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+
+.shock-number {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.shock-number em {
+  font-style: italic;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.shock-label {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ====== OBJECTION LIST ====== */
+.objection {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.objection summary {
+  padding: 16px 18px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  user-select: none;
+  position: relative;
+}
+
+.objection summary::-webkit-details-marker { display: none; }
+
+.objection summary::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--blue);
+  transition: transform 0.2s;
+  font-family: 'Fraunces', serif;
+}
+
+.objection[open] summary::after { transform: rotate(45deg); }
+
+.objection[open] { box-shadow: var(--shadow-md); }
+
+.objection-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px; height: 26px;
+  background: var(--blue-pale);
+  color: var(--blue);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+  flex-shrink: 0;
+}
+
+.objection-body {
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--line-soft);
+  padding-top: 14px;
+}
+
+.killer {
+  background: var(--navy);
+  color: white;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  margin-top: 10px;
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  line-height: 1.55;
+  position: relative;
+}
+
+.killer-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ====== STEPS / LEISTUNGSBEISPIELE ====== */
+.theme-pick {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.theme-btn {
+  padding: 14px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink-soft);
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-btn:hover {
+  border-color: var(--blue);
+  color: var(--navy);
+}
+
+.theme-btn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.theme-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.theme-content { display: none; }
+.theme-content.active { display: block; animation: fadeIn 0.3s; }
+
+/* ====== TIP / WARNING BOXES ====== */
+.tip {
+  background: linear-gradient(135deg, #fff8e6, #fffbed);
+  border: 1px solid #f5d878;
+  border-left: 4px solid var(--gold);
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  margin: 12px 0;
+  font-size: 14px;
+  color: #6b5219;
+}
+
+.tip-label {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.warn {
+  background: #fde8ea;
+  border-left: 4px solid var(--red);
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  margin: 12px 0;
+  font-size: 14px;
+  color: #9a1f29;
+}
+
+.warn-label {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* ====== READING TABLE ====== */
+.signals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 14px 0;
+}
+
+@media (max-width: 480px) {
+  .signals { grid-template-columns: 1fr; }
+}
+
+.signal {
+  background: var(--line-soft);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.signal-q {
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.signal-a {
+  color: var(--ink-soft);
+}
+
+.signal-a .pill {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 11px;
+  margin: 0 1px;
+}
+
+.pill.red { background: #fde8ea; color: #9a1f29; }
+.pill.yellow { background: #fff4d1; color: #8a6500; }
+.pill.green { background: #d8f0ec; color: #1a5e56; }
+.pill.blue { background: #d6e5f8; color: #0d3d7c; }
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-mute);
+  font-size: 13px;
+  border-top: 1px solid var(--line);
+  background: white;
+}
+
+footer strong { color: var(--navy); font-family: 'Fraunces', serif; font-size: 15px; }
+
+footer .signature {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--navy);
+  margin: 12px 0 4px;
+}
+
+/* ====== FLOATING ACTIONS ====== */
+.back-top {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  width: 44px; height: 44px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 99;
+}
+
+.back-top.show { opacity: 1; pointer-events: auto; }
+.back-top:hover { transform: translateY(-2px); }
+
+/* ====== PRINT ====== */
+@media print {
+  .nav, .back-top, .tabs-wrap { display: none; }
+  .tab-content, .theme-content { display: block !important; }
+  body { background: white; }
+  .card, .objection { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+}
+
+/* ====== MOBILE TUNING ====== */
+@media (max-width: 600px) {
+  .hero { padding: 22px 18px 28px; }
+  main { padding: 24px 16px 60px; }
+  .card { padding: 18px; }
+  .story { padding: 22px 18px; }
+  .tab { padding: 8px 4px; font-size: 12px; }
+  .tab span:last-child { font-size: 10px; }
+  .shock-number { font-size: 26px; }
+  .objection summary { padding: 14px 14px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="brand">
+      <span class="brand-mark">C</span>
+      <span class="brand-name">Combinvest AG · Schweiz</span>
+    </div>
+    <h1>Der <em>persönliche</em><br>Telefon-Leitfaden.</h1>
+    <p class="hero-sub">Für Arlind „Adi" Abazi · Finanzdienstleister. Terminvereinbarung am Telefon — bei Bekannten und auf Empfehlung. Mit Farbtyp-Anpassung, Story und Einwandbehandlung.</p>
+    <div class="hero-meta">
+      <span>🎯 Steuern als Türöffner</span>
+      <span>🎨 4-Farben-Modell</span>
+      <span>💡 Verifizierte Zahlen 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#story">Meine Story</a>
+    <a href="#farben">4 Farbtypen</a>
+    <a href="#bekannte">Bekannte</a>
+    <a href="#empfehlung">Empfehlung</a>
+    <a href="#themen">Leistungsbeispiele</a>
+    <a href="#zahlen">Schock-Zahlen</a>
+    <a href="#einwaende">Einwände</a>
+    <a href="#abschluss">Abschluss</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <span class="section-label">Fundament</span>
+  <h2 class="section-title">Meine <em>Geschichte</em> — was mich antreibt.</h2>
+  <p class="section-intro">Diese Story unterscheidet dich von jedem anderen Berater. Sie ist echt, kraftvoll und nicht kopierbar. Die <strong>Kurzversion</strong> für das Telefon, die <strong>Langversion</strong> für den Termin.</p>
+
+  <div class="card">
+    <div class="card-subtitle">Kurzversion · fürs Telefon</div>
+    <div class="story">
+      <span class="story-label">⚡ 15 Sekunden</span>
+      <div class="story-text">
+        <p>„Ich bin Finanzdienstleister aus <strong>Leidenschaft</strong> — ich komme aus Deutschland und habe dort gesehen, was passiert, wenn Menschen sich auf das System verlassen. Das will ich für die Menschen hier in der Schweiz <strong>verhindern</strong>."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-subtitle">Langversion · für den Termin</div>
+    <div class="story">
+      <span class="story-label">🎯 90 Sekunden · Türöffner</span>
+      <div class="story-text">
+        <p>„Ich komme ursprünglich aus Deutschland und bin mit <strong>21 in die Schweiz</strong> gekommen — bewusst, weil ich hier meine Zukunft sehe. Mit Wirtschaft befasse ich mich seit ich klein bin, das ist meine Leidenschaft.</p>
+        <p>Bei uns zuhause ging es finanziell nicht einfach zu — mein Vater hat für die ganze Familie gearbeitet. Aber was mich wirklich geprägt hat: Ich habe in Deutschland Menschen gesehen, die in <strong>Mülltonnen nach Pfandflaschen</strong> suchen. Leute, die ihr Leben lang gearbeitet, brav ihre Rechnungen bezahlt haben — und gedacht haben, das System fängt sie im Alter auf. Hat es aber nicht.</p>
+        <p>Genau deshalb mache ich heute das, was ich mache. <strong>Ich will, dass den Menschen hier in der Schweiz das nicht passiert.</strong>"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <span class="tip-label">⚡ Goldener Tipp</span>
+    Die Pfandflaschen-Story ist <strong>nur etwas für 🟡 Gelb und 🔴 Rot</strong> — die lieben Emotionen und Bilder. Bei 🟢 Grün und 🔵 Blau weichst du auf die familienorientierte Version aus (siehe Farbtypen unten).
+  </div>
+</section>
+
+<!-- ============ 4 FARBEN ============ -->
+<section id="farben">
+  <span class="section-label">Verkaufspsychologie</span>
+  <h2 class="section-title">Das <em>4-Farben-Modell</em> — lies deinen Kunden.</h2>
+  <p class="section-intro">Du bist von Natur aus <strong>🟡 Gelb</strong> — begeistert, energiegeladen, beziehungsstark. Das ist dein Naturtalent. Aber mit 🟢 Grünen und 🔵 Blauen musst du <strong>bewusst dosieren</strong>, sonst erschreckst du sie.</p>
+
+  <div class="card">
+    <div class="card-title">📞 So erkennst du den Typ in 30 Sekunden</div>
+    <div class="signals">
+      <div class="signal">
+        <div class="signal-q">Wie schnell spricht er?</div>
+        <div class="signal-a">Schnell = <span class="pill red">Rot</span> <span class="pill yellow">Gelb</span> · Langsam = <span class="pill green">Grün</span> <span class="pill blue">Blau</span></div>
+      </div>
+      <div class="signal">
+        <div class="signal-q">Wie viele Worte?</div>
+        <div class="signal-a">Viele = <span class="pill yellow">Gelb</span> · Wenige = <span class="pill red">Rot</span> <span class="pill blue">Blau</span></div>
+      </div>
+      <div class="signal">
+        <div class="signal-q">Was fragt er?</div>
+        <div class="signal-a">„Was kostet?" = <span class="pill red">Rot</span> <span class="pill blue">Blau</span> · „Erzähl mehr!" = <span class="pill yellow">Gelb</span> · „Wer noch?" = <span class="pill green">Grün</span></div>
+      </div>
+      <div class="signal">
+        <div class="signal-q">Wie begrüsst er?</div>
+        <div class="signal-a">Warm/herzlich = <span class="pill yellow">Gelb</span> <span class="pill green">Grün</span> · Kühl/direkt = <span class="pill red">Rot</span> <span class="pill blue">Blau</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab" data-color="red" data-tab="red"><span class="tab-dot"></span><span>Rot · Macher</span></button>
+      <button class="tab active" data-color="yellow" data-tab="yellow"><span class="tab-dot"></span><span>Gelb · Du!</span></button>
+      <button class="tab" data-color="green" data-tab="green"><span class="tab-dot"></span><span>Grün · Bewahrer</span></button>
+      <button class="tab" data-color="blue" data-tab="blue"><span class="tab-dot"></span><span>Blau · Analytiker</span></button>
+    </div>
+  </div>
+
+  <!-- RED -->
+  <div class="tab-content" data-tab-content="red">
+    <div class="color-info red">
+      <div>
+        <h4>🔴 Rot — Der ungeduldige Macher</h4>
+        <div class="recognize"><strong>Erkennt man:</strong> „Kommen Sie zum Punkt", spricht laut/schnell, unterbricht, „Was kostet das? Was bringt das?"</div>
+      </div>
+      <div class="do-dont">
+        <div class="dont"><strong>❌ Nicht machen</strong>Lange Story, Smalltalk, vorsichtig sprechen, Details</div>
+        <div class="do"><strong>✅ Machen</strong>Direkt, kurze Sätze, Zahlen, Termin in 30 Sek. klarmachen</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Beispiel-Einstieg bei Empfehlung</div>
+      <div class="script">
+        <span class="speaker">Du · direkt</span>
+        <p>„Guten Tag Herr Muster, Abazi von Combinvest. Komme direkt zum Punkt: Herr Meier hat Sie empfohlen, weil ich ihm jährlich <strong>mehrere Tausend Franken Steuern</strong> gespart habe. Darf ich Ihnen kurz erklären, worum's geht?"</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Story-Anpassung</div>
+      <p style="color:var(--ink-soft);font-size:14px;">Sehr kurz halten — nur 2 Sätze:</p>
+      <div class="script">
+        <p>„Ich komme aus Deutschland, habe gesehen wie Leute im Alter scheitern. Will das hier verhindern. Punkt."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- YELLOW -->
+  <div class="tab-content active" data-tab-content="yellow">
+    <div class="color-info yellow">
+      <div>
+        <h4>🟡 Gelb — Der Begeisterte <span style="color:var(--gold);font-size:13px;">· DEIN TYP</span></h4>
+        <div class="recognize"><strong>Erkennt man:</strong> Lacht, erzählt, „Mensch schön dass du anrufst!", unterbricht mit eigenen Storys</div>
+      </div>
+      <div class="do-dont">
+        <div class="dont"><strong>❌ Nicht machen</strong>Zu viele Zahlen, trocken sein, zu schnell zum Geschäft</div>
+        <div class="do"><strong>✅ Machen</strong>Begeistert sein (kommt natürlich!), Story erzählen, Komplimente, lachen</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Beispiel-Einstieg bei Empfehlung</div>
+      <div class="script">
+        <span class="speaker">Du · warm & energisch</span>
+        <p>„Guten Tag Herr Muster! Abazi hier von Combinvest — Herr Meier hat mir so viel <strong>Gutes über Sie erzählt</strong>, dass ich es kaum erwarten konnte, Sie anzurufen! Wie geht's Ihnen?"</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Killer-Satz für Termin</div>
+      <div class="script">
+        <p>„Ich erzähl dir das einfach mal — ich glaube, das wird dich genauso <strong>faszinieren</strong> wie mich. Lass uns einen Kaffee trinken, Donnerstag?"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GREEN -->
+  <div class="tab-content" data-tab-content="green">
+    <div class="color-info green">
+      <div>
+        <h4>🟢 Grün — Der vorsichtige Bewahrer</h4>
+        <div class="recognize"><strong>Erkennt man:</strong> Ruhig, höflich, „Hmm, ich muss das mit meiner Frau besprechen", „Wer macht das denn noch?"</div>
+      </div>
+      <div class="do-dont">
+        <div class="dont"><strong>❌ Nicht machen</strong>Druck, zu viel Energie, „jetzt sofort!", Pfandflaschen-Drama</div>
+        <div class="do"><strong>✅ Machen</strong>Ruhig sprechen, Empfehlungsgeber betonen, Sicherheit, Familie einladen</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Beispiel-Einstieg bei Empfehlung</div>
+      <div class="script">
+        <span class="speaker">Du · ruhig & vertrauensvoll</span>
+        <p>„Guten Tag Herr Muster, hier spricht Herr Abazi von der Combinvest AG. Ich rufe auf <strong>Empfehlung von Herrn Meier</strong> an — er hat mich gebeten, mich bei Ihnen zu melden. Hätten Sie kurz zwei Minuten?"</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Story-Anpassung (Familien-Version)</div>
+      <p style="color:var(--ink-soft);font-size:14px;">Statt Pfandflaschen → Familie:</p>
+      <div class="script">
+        <p>„Mein Vater hat sein Leben lang für die ganze Familie gearbeitet. Genau deshalb ist mir wichtig, dass <strong>Familien hier in der Schweiz sicher aufgestellt</strong> sind."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLUE -->
+  <div class="tab-content" data-tab-content="blue">
+    <div class="color-info blue">
+      <div>
+        <h4>🔵 Blau — Der skeptische Analytiker</h4>
+        <div class="recognize"><strong>Erkennt man:</strong> Fragen über Fragen, „Welche Lizenz?", „Wie genau funktioniert das?", lange Pausen</div>
+      </div>
+      <div class="do-dont">
+        <div class="dont"><strong>❌ Nicht machen</strong>„Sensationell!", Storys, allgemein bleiben, ausweichen</div>
+        <div class="do"><strong>✅ Machen</strong>Sachlich, konkrete Zahlen, Quellen, direkte Antworten</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Beispiel-Einstieg bei Empfehlung</div>
+      <div class="script">
+        <span class="speaker">Du · sachlich & präzise</span>
+        <p>„Guten Tag Herr Muster, Abazi von der Combinvest AG, <strong>FINMA-registrierter Finanzdienstleister</strong>. Ich rufe auf Empfehlung von Herrn Meier an, dem ich bei seiner Finanzplanung helfe. Hätten Sie kurz Zeit?"</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-subtitle">Killer-Satz für Termin</div>
+      <div class="script">
+        <p>„Ich verstehe — Sie wollen es genau wissen, bevor Sie Zeit investieren. Sehr vernünftig. Genau deshalb arbeite ich mit <strong>konkreten Berechnungen, nicht mit Versprechen</strong>. Beim Termin bringe ich Ihnen Ihre persönliche Analyse — dann entscheiden Sie auf Basis von Zahlen."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <span class="warn-label">⚠️ Achtung für dich</span>
+    Deine grösste Lernkurve: bei <strong>Grün</strong> und <strong>Blau</strong> bewusst die Energie runterfahren. Sie sind nicht uninteressiert — sie ticken nur anders. Druck killt diese Typen sofort.
+  </div>
+</section>
+
+<!-- ============ BEKANNTE ============ -->
+<section id="bekannte">
+  <span class="section-label">Skript 1</span>
+  <h2 class="section-title">Anruf bei <em>Bekannten</em> · Umfeld</h2>
+  <p class="section-intro">Hier bist du <strong>Adi</strong>. Locker, freundschaftlich, energiegeladen. Du-Form, kein Verkauf — Meinungs- und Begeisterungsgespräch.</p>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">1</span>Warmer Einstieg</div>
+    <div class="script">
+      <p>„Hallo Thomas! Schön dass ich dich gleich erreiche. Wie geht's dir? Was gibt's Neues bei dir?"</p>
+    </div>
+    <div class="note">Erzählen lassen · positives Feedback geben · echtes Interesse zeigen (mind. 30 Sek.)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">2</span>Grund des Anrufs</div>
+    <div class="script">
+      <p>„Der Grund warum ich dich heute anrufe ist ein <strong>ganz besonderer</strong>. Habe vor kurzem eine Ausbildung zum eidgenössischen Finanzexperten begonnen.</p>
+      <p>Im Zuge dessen habe ich gesehen, welche <strong>sensationellen Möglichkeiten</strong> es in der Schweiz gibt, seine persönliche Steuerlast zu reduzieren — oder z.B. die Nettorendite seiner Ersparnisse bei der Bank deutlich zu erhöhen.</p>
+      <p>Bin total fasziniert davon und würde dir das gerne <strong>zeigen</strong> — und hören, was du dazu sagst."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">3</span>Terminvereinbarung</div>
+    <div class="script">
+      <p>„Mir ist deine Meinung sehr wichtig — deswegen würde ich mich gerne mit dir treffen, um zu erfahren, was du davon hältst.</p>
+      <p>Wann wäre denn ein guter Zeitpunkt für dich? Diesen <strong>Donnerstag oder besser am Samstag</strong> Vormittag um 10?"</p>
+    </div>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--gold);">
+    <div class="card-title">🤔 Wenn er fragt: „Worum geht's denn genau?"</div>
+    <div class="script">
+      <p>„Ich verstehe, dass du jetzt neugierig bist… Das ist nur etwas <strong>zu umfangreich fürs Telefon</strong> — würde dir das gerne persönlich zeigen.</p>
+      <p>Wann wäre es denn am besten für dich: Donnerstag oder…?"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMPFEHLUNG ============ -->
+<section id="empfehlung">
+  <span class="section-label">Skript 2</span>
+  <h2 class="section-title">Anruf auf <em>Empfehlung</em></h2>
+  <p class="section-intro">Hier bist du <strong>Herr Abazi</strong>. Seriös, Sie-Form. Einstieg ist <em>immer gleich</em> — danach Leistungsbeispiel je nach Hook.</p>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">1</span>Einstiegsmodul · immer gleich</div>
+    <div class="script">
+      <p>„Guten Tag Herr Muster. Mein Name ist Herr Abazi von der <strong>Combinvest AG</strong>. Wir haben einen gemeinsamen Bekannten, Herrn Meier, Ihren Arbeitskollegen. Ich soll Ihnen einen lieben Gruss ausrichten."</p>
+    </div>
+    <div class="script script-block">
+      <p>„Ich bin sein persönlicher Finanzexperte und habe ihm gezeigt, wie er Ende jeden Jahres, Ende jeden Monats <strong>netto mehr Geld zur Verfügung hat</strong>.</p>
+      <p>Er war davon so begeistert, dass er mich gebeten hat, Sie unbedingt anzurufen. Ich möchte seiner Bitte sehr gerne nachkommen — und das ist der Grund meines heutigen Anrufs."</p>
+    </div>
+    <div class="script script-block">
+      <p>„Ich weiss noch gar nicht, ob Sie meine Dienstleistung überhaupt benötigen. Darf ich Ihnen deswegen <strong>eine Frage stellen</strong>?"</p>
+      <span class="speaker kunde">Kunde: „Ja"</span>
+    </div>
+    <div class="note">→ Jetzt zum gewählten Leistungsbeispiel (siehe nächster Abschnitt)</div>
+  </div>
+</section>
+
+<!-- ============ LEISTUNGSBEISPIELE ============ -->
+<section id="themen">
+  <span class="section-label">Hooks · Leistungsbeispiele</span>
+  <h2 class="section-title">Die 4 <em>Themen</em>-Türöffner</h2>
+  <p class="section-intro"><strong>Steuern ist dein Haupthebel</strong> — jeder hasst Steuern zu zahlen. Wähle das Thema, das gerade passt:</p>
+
+  <div class="theme-pick">
+    <button class="theme-btn active" data-theme="steuer"><span class="theme-icon">💰</span>Steuern</button>
+    <button class="theme-btn" data-theme="alter"><span class="theme-icon">👴</span>Altersvorsorge</button>
+    <button class="theme-btn" data-theme="sparen"><span class="theme-icon">📈</span>Sparen</button>
+    <button class="theme-btn" data-theme="wohnen"><span class="theme-icon">🏠</span>Wohnen</button>
+  </div>
+
+  <!-- STEUER -->
+  <div class="theme-content active" data-theme-content="steuer">
+    <div class="card">
+      <div class="card-title">💰 Leistungsbeispiel: Steuern <span style="color:var(--gold);font-size:12px;">· HAUPTHEBEL</span></div>
+      <div class="card-subtitle">Schritt 1 · Aufwärmfrage</div>
+      <div class="script">
+        <p>„Zahlen Sie Steuern?"</p>
+        <span class="speaker kunde">Kunde antwortet</span>
+        <p>„… <strong>Gerne</strong>?" <em>(lachen — er auch)</em></p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 2 · Schock-Zahl einbauen</div>
+      <div class="script">
+        <p>„Wussten Sie eigentlich, dass ein durchschnittlicher Schweizer über sein Erwerbsleben <strong>fast eine Million Franken an Steuern</strong> zahlt? Und dass es legale Möglichkeiten gibt, davon einen erheblichen Teil zurückzuholen, die die meisten gar nicht kennen?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 3 · Interesse wecken</div>
+      <div class="script">
+        <p>„Mal angenommen, es gäbe die Möglichkeit, Ihre aktuelle Steuerlast <strong>deutlich zu reduzieren</strong> — und sogar einen Teil der bereits eingezahlten Steuern zurückzubekommen — wäre das interessant für Sie?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 4 · Überleitung zum Termin</div>
+      <div class="script">
+        <p>„Weiss jetzt natürlich noch nicht, ob das bei Ihnen möglich ist. Aber ich könnte es einmal für Sie <strong>überprüfen</strong>. Soll ich das für Sie tun?"</p>
+      </div>
+      <div class="note">→ TTV Abschlussmodul (siehe unten)</div>
+    </div>
+  </div>
+
+  <!-- ALTER -->
+  <div class="theme-content" data-theme-content="alter">
+    <div class="card">
+      <div class="card-title">👴 Leistungsbeispiel: Altersvorsorge</div>
+      <div class="card-subtitle">Schritt 1 · Stimmung abholen</div>
+      <div class="script">
+        <p>„Wann haben Sie denn zuletzt etwas <strong>Positives</strong> über die staatliche Altersvorsorge in der Schweiz gehört?"</p>
+        <span class="speaker kunde">Antwort abwarten</span>
+        <p>„Was hört man denn so?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 2 · Realität reinholen</div>
+      <div class="script">
+        <p>„Wussten Sie, dass die <strong>AHV-Maximalrente 2026 nur CHF 2'520 pro Monat</strong> beträgt? Und das auch nur, wenn Sie 44 Jahre lückenlos einzahlen und mindestens CHF 90'720 verdienen. Die meisten bekommen deutlich weniger."</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 3 · Persönlich machen</div>
+      <div class="script">
+        <p>„Was wird das denn für die meisten Schweizer bedeuten? … Und für Sie?"</p>
+        <span class="speaker kunde">Antwort abwarten · in Ruhe lassen</span>
+        <p>„Hat Ihnen denn schon einmal jemand <strong>ausgerechnet</strong>, was das genau in Franken und Rappen bedeuten würde?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 4 · Überleitung</div>
+      <div class="script">
+        <p>„Soll ich das für Sie tun?"</p>
+      </div>
+      <div class="note">→ TTV Abschlussmodul</div>
+    </div>
+  </div>
+
+  <!-- SPAREN -->
+  <div class="theme-content" data-theme-content="sparen">
+    <div class="card">
+      <div class="card-title">📈 Leistungsbeispiel: Sparen</div>
+      <div class="card-subtitle">Schritt 1 · Mit Umfrage einsteigen</div>
+      <div class="script">
+        <p>„Es gab gerade eine Umfrage in der Schweiz. Die hat ergeben, dass die meisten Schweizer sehr <strong>unzufrieden</strong> mit dem aktuellen Ertrag ihrer Ersparnisse auf der Bank sind. Können Sie sich das vorstellen?"</p>
+        <span class="speaker kunde">Antwort abwarten</span>
+        <p>„Wie geht es eigentlich Ihnen damit?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 2 · Killer-Zahl</div>
+      <div class="script">
+        <p>„Der durchschnittliche Schweizer Sparzins liegt aktuell bei nur <strong>0,11 Prozent</strong>. Auf CHF 10'000 sind das gerade mal CHF 11 im Jahr — während die Inflation Ihr Geld jedes Jahr entwertet. Real verlieren Sie also Geld."</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 3 · Interesse wecken</div>
+      <div class="script">
+        <p>„Mal angenommen, es gäbe die Möglichkeit, den Ertrag Ihrer Ersparnisse <strong>deutlich zu erhöhen</strong> — bei gleicher oder sogar mehr Sicherheit. Wäre das interessant für Sie?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Schritt 4 · Überleitung</div>
+      <div class="script">
+        <p>„Weiss jetzt natürlich noch nicht, ob das bei Ihnen möglich ist. Aber ich könnte es einmal für Sie überprüfen. <strong>Soll ich das für Sie tun?</strong>"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WOHNEN -->
+  <div class="theme-content" data-theme-content="wohnen">
+    <div class="card">
+      <div class="card-title">🏠 Leistungsbeispiel: Wohnen</div>
+      <div class="card-subtitle">Schritt 1 · Situation klären</div>
+      <div class="script">
+        <p>„Wohnen Sie im Eigenheim oder zur Miete?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:14px;">Variante A · Mieter</div>
+      <div class="script">
+        <p>„Die <strong>Schweiz hat mit rund 36% die niedrigste Wohneigentumsquote in ganz Europa</strong> — wir sind Schlusslicht. Und die meisten sind unzufrieden damit. Wieso ist das so?"</p>
+        <p>„Wenn Sie Miete bezahlen, <strong>wen machen Sie damit langfristig reich</strong>? Ein wenig wie Fenster auf und Geld raus…"</p>
+        <p>„Mal angenommen, es gäbe die Möglichkeit, für den gleichen Betrag den Sie für Miete bezahlen auch Eigentum in der gleichen Grösse zu erwerben — wäre das interessant für Sie?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:14px;">Variante B · Eigentümer mit Finanzierung</div>
+      <div class="script">
+        <p>„Es gab gerade eine Umfrage — die meisten Schweizer haben die Meinung, dass sie aktuell <strong>etwas zu viel Zinsen</strong> an ihre Bank bezahlen. Können Sie sich das vorstellen?"</p>
+        <p>„Mal angenommen, es gäbe die Möglichkeit, die <strong>monatliche Belastung</strong> Ihrer Finanzierung deutlich zu reduzieren — wäre das interessant für Sie?"</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:18px;">Überleitung</div>
+      <div class="script">
+        <p>„Ich könnte es einmal für Sie überprüfen. <strong>Soll ich das für Sie tun?</strong>"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHOCK-ZAHLEN ============ -->
+<section id="zahlen">
+  <span class="section-label">Munition · 2026</span>
+  <h2 class="section-title">Die <em>Schock-Zahlen</em> · verifiziert</h2>
+  <p class="section-intro">Alle Zahlen sind <strong>auf Stand 2026 verifiziert</strong> — du kannst sie sofort einsetzen, ohne dich zu blamieren.</p>
+
+  <div class="card">
+    <div class="card-title">💰 Steuern · Dein Haupthebel</div>
+    <div class="shock-grid">
+      <div class="shock">
+        <div class="shock-number"><em>~ 30%</em></div>
+        <div class="shock-label">Durchschnittliche Steuerbelastung in der Schweiz für natürliche Personen</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number">CHF <em>1'450–2'900</em></div>
+        <div class="shock-label">Steuerersparnis pro Jahr allein durch Säule 3a (je nach Einkommen & Kanton)</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number">CHF <em>250–400</em></div>
+        <div class="shock-label">Steuerersparnis pro CHF 1'000 Einzahlung in die Säule 3a — sofort</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number"><em>~ 1 Mio.</em></div>
+        <div class="shock-label">Geschätzte Lebenszeit-Steuerlast eines durchschnittlichen Schweizers</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">👴 Altersvorsorge</div>
+    <div class="shock-grid">
+      <div class="shock">
+        <div class="shock-number">CHF <em>2'520</em></div>
+        <div class="shock-label">AHV-Maximalrente 2026 pro Monat — nur bei 44 Jahren lückenlos + CHF 90'720 Schnittlohn</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number">CHF <em>1'260</em></div>
+        <div class="shock-label">AHV-Minimalrente 2026 — davon soll man in der Schweiz leben?</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number">CHF <em>7'258</em></div>
+        <div class="shock-label">Maximal abzugsfähig in Säule 3a 2026 (Angestellte mit PK)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📈 Sparen</div>
+    <div class="shock-grid">
+      <div class="shock">
+        <div class="shock-number"><em>0,11%</em></div>
+        <div class="shock-label">Durchschnittlicher Schweizer Sparzins Anfang 2026 (moneyland.ch)</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number">CHF <em>11.-</em></div>
+        <div class="shock-label">… auf CHF 10'000 pro Jahr. Während die Inflation Ihr Geld real entwertet</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏠 Wohnen</div>
+    <div class="shock-grid">
+      <div class="shock">
+        <div class="shock-number"><em>~ 36%</em></div>
+        <div class="shock-label">Wohneigentumsquote Schweiz — niedrigster Wert in ganz Europa</div>
+      </div>
+      <div class="shock">
+        <div class="shock-number">CHF <em>900'000</em></div>
+        <div class="shock-label">… an Miete „verbrannt" bei CHF 2'500/Monat über 30 Jahre — und am Ende: nichts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EINWÄNDE ============ -->
+<section id="einwaende">
+  <span class="section-label">Einwandbehandlung</span>
+  <h2 class="section-title">Die 8 typischen <em>Einwände</em></h2>
+  <p class="section-intro"><strong>Goldene Regel:</strong> Niemals verteidigen — immer umdrehen. Jeder Einwand ist eine versteckte Frage. Tippe auf einen Einwand, um die Antwort zu sehen.</p>
+
+  <details class="objection">
+    <summary><span class="objection-num">1</span>„Worum geht's da genau? Sag's mir am Telefon."</summary>
+    <div class="objection-body">
+      <div class="script">
+        <p>„Ich verstehe absolut, dass du jetzt neugierig bist — wäre ich auch. Aber ehrlich: Wenn ich dir das jetzt am Telefon erkläre, machst du dir ein <strong>falsches Bild</strong>. Das Thema ist zu wichtig für 2 Minuten Smalltalk. Gib mir 30 Minuten persönlich — wenn du danach sagst, das ist nichts für dich, ist auch okay. Donnerstag oder Samstag?"</p>
+      </div>
+      <div class="note">Bei Empfehlung (Sie-Form): „… am Telefon würde ich Ihnen das Thema nicht gerecht. Wir sprechen über Ihr Geld."</div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">2</span>„Ich habe schon einen Berater / meine Bank macht das."</summary>
+    <div class="objection-body">
+      <div class="script">
+        <p>„Das freut mich für Sie, ehrlich — viele haben gar niemanden. Aber sagen Sie mal: <strong>Wann hat Ihr Berater Ihnen das letzte Mal proaktiv eine konkrete Idee gebracht, wie Sie Steuern sparen?</strong> … <em>(Pause)</em> … Genau das ist nämlich oft der Unterschied. Die meisten Berater verwalten — ich gestalte."</p>
+      </div>
+      <div class="killer">
+        <span class="killer-label">⚡ Killer-Satz</span>
+        Eine Bank verkauft Ihnen Bankprodukte. Ein Versicherer verkauft Ihnen Versicherungen. <strong>Ich bin unabhängig</strong> — ich schaue, was für Sie das Beste ist, egal von welchem Anbieter.
+      </div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">3</span>„Keine Zeit / bin gerade beschäftigt."</summary>
+    <div class="objection-body">
+      <div class="script">
+        <p>„Verstehe ich total — gerade <strong>deshalb</strong> rufe ich nicht jetzt für ein Gespräch an, sondern für einen Termin. 30 Minuten in den nächsten zwei Wochen — du suchst dir die Zeit aus. Donnerstag Abend oder Samstag Vormittag?"</p>
+      </div>
+      <div class="killer">
+        <span class="killer-label">⚡ Bei harter Abwehr</span>
+        Mal ehrlich: Wenn jemand Ihnen sagen würde, dass Sie jeden Monat 200 Franken an den Staat verschenken, hätten Sie dann 30 Minuten Zeit, das anzuschauen?
+      </div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">4</span>„Schick mir was per Mail / WhatsApp." ⚠️</summary>
+    <div class="objection-body">
+      <div class="warn"><span class="warn-label">⚠️ Termin-Killer Nr. 1</span>Wenn du hier nachgibst, ist der Termin tot.</div>
+      <div class="script">
+        <p>„Ehrlich gesagt — das mache ich <strong>bewusst nicht</strong>. Und ich sag dir warum: Jeder, der dir was per Mail schickt, will dir was verkaufen. Ich will erst verstehen, was du überhaupt brauchst, bevor ich dir irgendwas zeige. Sonst landet bei dir ein Standard-PDF, das du in 30 Sekunden wegklickst — und keiner von uns hat was davon. Gib mir 30 Minuten persönlich. Donnerstag oder Samstag?"</p>
+      </div>
+      <div class="killer">
+        <span class="killer-label">⚡ Kurz & klar</span>
+        Was ich mache, gibt's nicht als PDF — das ist auf dich zugeschnitten. Genau deshalb müssen wir uns sehen.
+      </div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">5</span>„Was kostet das denn?"</summary>
+    <div class="objection-body">
+      <div class="script">
+        <p>„Sehr gute Frage — und ich respektiere, dass Sie das fragen. Das <strong>Erstgespräch und die komplette Analyse sind für Sie kostenlos und unverbindlich</strong>. Ich werde von den Anbietern bezahlt, mit denen wir am Ende vielleicht zusammenarbeiten — Sie zahlen nichts für meine Beratung. Sie entscheiden am Ende, ob Sie was umsetzen wollen oder nicht. Fair, oder?"</p>
+      </div>
+      <div class="tip"><span class="tip-label">⚡ Wichtig</span>Diese Antwort nur geben, wenn es bei Combinvest tatsächlich so läuft. Falls Honorare, anpassen.</div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">6</span>„Klingt nach Versicherung / MLM / Schneeballsystem." 🎯</summary>
+    <div class="objection-body">
+      <div class="script">
+        <p>„Verstehe ich, dass Sie skeptisch sind — und ehrlich: <strong>gut, dass Sie das fragen</strong>. Beim Thema Geld kann man nicht vorsichtig genug sein. Aber lassen Sie mich klarstellen: <strong>Ich bin kein Versicherungsvermittler. Ich bin Finanzdienstleister.</strong></p>
+        <p>Mein Job ist nicht, Ihnen eine Versicherung zu verkaufen, sondern Ihre <strong>gesamte Finanzsituation</strong> zu analysieren — Steuern, Vorsorge, Sparen, Eigenheim. Versicherungen sind nur EIN kleiner Teil davon, und oft genau das, was wir <strong>abbauen</strong>, weil viele Schweizer überversichert sind. Combinvest ist eine offizielle Schweizer AG mit Sitz und Lizenz — kein Schneeballsystem."</p>
+      </div>
+      <div class="killer">
+        <span class="killer-label">⚡ Killer-Satz</span>
+        Wenn ich nach 30 Minuten persönlich für Sie wie ein Versicherungsverkäufer wirke — schicken Sie mich raus. Aber geben Sie mir die Chance, mich zu zeigen.
+      </div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">7</span>„Ich bin nicht interessiert." (ohne Grund)</summary>
+    <div class="objection-body">
+      <div class="script">
+        <p>„Okay, das respektiere ich. Darf ich nur <strong>eine letzte Frage</strong> stellen, bevor ich auflege? Liegt es daran, dass das Thema dich nicht interessiert — oder daran, dass du gerade keinen Bedarf siehst? Das ist ein Unterschied."</p>
+      </div>
+      <div class="script script-block">
+        <span class="speaker">Wenn „kein Bedarf"</span>
+        <p>„Das ist genau das, was 90% der Schweizer sagen — bis sie sehen, was möglich wäre. Gib mir 30 Minuten, dann entscheidest <strong>DU</strong>, ob es Bedarf gibt."</p>
+      </div>
+      <div class="tip">
+        <span class="tip-label">💡 Empfehlung auch aus Absagen holen</span>
+        „Alles gut. Aber: Wenn dir in den nächsten Wochen jemand einfällt, der gerade über Steuern oder Vorsorge nachdenkt — gib mir kurz Bescheid. Danke!"
+      </div>
+    </div>
+  </details>
+
+  <details class="objection">
+    <summary><span class="objection-num">8</span>„Du bist doch noch so jung — was weisst du davon?" 🎯</summary>
+    <div class="objection-body">
+      <div class="warn"><span class="warn-label">Dein wichtigster Einwand</span>Mit 23 hörst du das öfter. Bereite dich darauf vor — und mache es zur Stärke.</div>
+
+      <div class="card-subtitle" style="margin-top:14px;">Variante A · Selbstbewusst-charmant</div>
+      <div class="script">
+        <p>„Sie haben absolut recht — ich bin jung. Aber genau das ist mein <strong>Vorteil</strong>: Ich habe das Gesetz und die aktuellen Möglichkeiten <strong>frisch im Kopf</strong>, nicht das, was vor 20 Jahren mal galt. Und keine Sorge: Ich arbeite nicht allein — bei wichtigen Fragen habe ich ein Team erfahrener Experten hinter mir."</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:14px;">Variante B · Mit deiner Story (sehr stark!)</div>
+      <div class="script">
+        <p>„Das stimmt, ich bin 23. Aber wissen Sie was? <strong>Genau das ist der Grund, warum ich das mache.</strong> Ich komme aus Deutschland und habe gesehen, wohin es führt, wenn man sich aufs System verlässt. Ich will <strong>nicht mit 50 anfangen</strong> zu verstehen wie Finanzen funktionieren — sondern jetzt. Sie kriegen jemanden, der noch <strong>Feuer hat</strong>."</p>
+      </div>
+
+      <div class="card-subtitle" style="margin-top:14px;">Variante C · Die clevere Gegenfrage</div>
+      <div class="script">
+        <p>„Ehrliche Frage zurück: Würden Sie lieber einen 60-jährigen Berater, der in 5 Jahren in Rente geht — oder jemanden, der die <strong>nächsten 40 Jahre</strong> für Sie da ist?"</p>
+      </div>
+
+      <div class="killer">
+        <span class="killer-label">⚡ Wenn er weiter zweifelt</span>
+        Beurteilen Sie mich nicht nach meinem Alter, sondern nach dem, was ich Ihnen zeige. 30 Minuten. Wenn ich Sie nicht überzeuge, war's eine Stunde, die Sie sowieso vor dem TV verbracht hätten.
+      </div>
+    </div>
+  </details>
+
+  <div class="card" style="margin-top:24px;background:linear-gradient(135deg,var(--navy),var(--navy-soft));color:white;">
+    <div class="card-title" style="color:white;">🎯 Die goldene Regel</div>
+    <p style="color:rgba(255,255,255,0.85);font-size:14px;">Jeder Einwand ist eine versteckte Frage:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;font-size:13px;">
+      <div style="background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;"><strong style="color:var(--gold);">„Keine Zeit"</strong><br>= „Lohnt sich das?"</div>
+      <div style="background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;"><strong style="color:var(--gold);">„Hab Berater"</strong><br>= „Warum wechseln?"</div>
+      <div style="background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;"><strong style="color:var(--gold);">„Per Mail"</strong><br>= „Ich will dich loswerden"</div>
+      <div style="background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;"><strong style="color:var(--gold);">„Zu jung?"</strong><br>= „Kann ich vertrauen?"</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABSCHLUSS ============ -->
+<section id="abschluss">
+  <span class="section-label">TTV Abschlussmodul</span>
+  <h2 class="section-title">Der <em>Termin</em> · immer gleich</h2>
+  <p class="section-intro">Sobald „Ja" kommt → sofort konkret werden. Keine offenen Fragen, sondern <strong>zwei Alternativen</strong>.</p>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">1</span>Bestätigung & Alternativen</div>
+    <div class="script">
+      <p>„Schön Herr Kunde, das mache ich gerne für Sie. Wann passt es Ihnen denn besser in der kommenden Woche — eher am <strong>Montag um 17 Uhr</strong> oder am <strong>Donnerstag am frühen Nachmittag</strong>?"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">2</span>Anfänger-Tipp</div>
+    <div class="script">
+      <p>„Gerne werde ich zu unserem Termin versuchen — extra für Sie — unseren <strong>absoluten Experten</strong> für dieses Thema mitzunehmen."</p>
+    </div>
+    <div class="note">Nimmt dir Druck, gibt dem Kunden Wert — wirkt nicht schwach, sondern grosszügig.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="step-num">3</span>Logistik & Bindung</div>
+    <div class="script">
+      <p>„Wie komme ich am besten zu Ihnen? <em>(Adresse notieren)</em></p>
+      <p>Bitte notieren Sie sich meine Nummer, falls Sie bis dahin noch Fragen haben.</p>
+      <p>Dann freuen Sie sich vorab schon sehr auf unseren Termin — der <strong>durchschnittliche Vorteil</strong>, den wir unseren Kunden ermöglichen, liegt bei … und mehr."</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <span class="tip-label">⚡ Pro-Tipp</span>
+    Nach dem Telefon: <strong>SMS oder WhatsApp</strong> mit Bestätigung. „Hat mich gefreut, Herr Muster — bis [Datum, Uhrzeit] bei Ihnen. Herzlich, A. Abazi". Das halbiert die No-Show-Rate.
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>Combinvest AG</strong>
+  <div class="signature">Arlind „Adi" Abazi</div>
+  <div>Finanzdienstleister · Schweiz</div>
+  <div style="margin-top:14px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-mute);">Persönlicher Leitfaden · Version 2026</div>
+</footer>
+
+<button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">↑</button>
+
+<script>
+// Tabs (Farbtypen)
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    const target = t.dataset.tab;
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelector(`[data-tab-content="${target}"]`).classList.add('active');
+  });
+});
+
+// Themen-Buttons
+document.querySelectorAll('.theme-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    const target = b.dataset.theme;
+    document.querySelectorAll('.theme-btn').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.theme-content').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector(`[data-theme-content="${target}"]`).classList.add('active');
+  });
+});
+
+// Back-to-top sichtbar machen
+const back = document.querySelector('.back-top');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) back.classList.add('show');
+  else back.classList.remove('show');
+});
+
+// Smooth scroll für Nav-Links (Offset wegen sticky)
+document.querySelectorAll('.nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 60;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
+  });
+});
+</script>
+
+</body>
+</html>
